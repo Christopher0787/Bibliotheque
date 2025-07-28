@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	S'inscricre
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<section class="container mt-4">
+	<h1 class="text-center">S'inscrire</h1>
+	{% include 'components/users/_form.html.twig' with { buttonLabel: 'S\'inscrire' }  %}
+	</section>
+{% endblock %}
