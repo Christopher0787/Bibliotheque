@@ -1,0 +1,18 @@
+%button {
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+@each $color-name, $color-value in $colors-palette {
+    .button-#{$color-name} {
+        @extend %button;
+
+        background: $color-value;
+
+        &:hover {
+            background: darken($color-value, 20%);
+        }
+        
+    }
+}
