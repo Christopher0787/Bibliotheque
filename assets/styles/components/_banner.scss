@@ -1,7 +1,7 @@
 .banner {
     @include flexbox(center, center);
     height: calc(80vh - 70px);
-    background: no-repeat center / cover url('../../images/banner-formations.jpg');
+    // background: no-repeat center / cover url('../../images/banner-formations.jpg');
 
     &-content {
         padding: 0.5rem 1rem;
