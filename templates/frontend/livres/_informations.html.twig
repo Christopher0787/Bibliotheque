@@ -1,0 +1,14 @@
+<h2>Information</h2>
+<p>
+	<strong>Date de création</strong>
+	{{ article.createdAt|format_datetime('full', 'none') }}
+</p>
+<p>
+	<strong>Auteur</strong>
+	{{ article.author.fullName }}
+</p>
+
+{% if article.categorie %}
+	<h2>Categorie:</h2>
+	<p class="badge text-bg-primary">{{ article.categorie.name }}</p>
+{% endif %}

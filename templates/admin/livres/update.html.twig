@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Enregistrer un Livre
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">
+			Enregistrer un Livre
+		</h1>
+		{% include 'components/livres/_form.html.twig' with { buttonLabel: 'Enregistrer' } %}
+	</section>
+{% endblock %}
