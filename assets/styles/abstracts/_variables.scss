@@ -1,0 +1,20 @@
+$primary: #ffbf00;
+$secondary: #ffee01;
+
+$success: #51d370; 
+$error: #e75757; 
+$warning: #e4c16f;
+$info: #60b9d9;
+
+$colors-palette: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'error': $error,
+    'warning': $warning,
+    'info': $info
+);
+
+$primary-opacity-light: rgba(85, 202, 245, 0.4);
+
+$border-radius: 8px;

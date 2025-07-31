@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Administration des utilisateurs
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Administration des utilisateurs</h1>
+		<a href="{{ path('app_register') }}" class="btn btn-primary">Créer un utilisateur</a>
+		<div class="row mt-4 gy-4">
+			{% for user in users %}
+				<div class="col-md-3">
+					<div class="card">
+						<h2 class="card-header">
+							{{ user.fullName }}
+						</h2>
+						<div class="card-body">
+							<em class="text-muted">{{ user.id }}</em>
+							<p>{{ user.email }}</p>
+							{# <p>
+																						Créer le
+																						{{ user.createdAt|date('d-m-y H:i') }}
+																					</p> #}
+							<div class="d-flex justify-content-between align-items-center flex-wrap">
+								<a href="{{ path('admin_users_update', { id: user.id }) }}" class="btn btn-warning">Modifier</a>
+								<form action="{{ path('admin_users_delete', { id: user.id }) }}" method="POST" onsubmit="return confirm('Être-vous sur de vouloir supprimer ce user ?')">
+									<input type="hidden" name="token_csrf" value="{{ csrf_token('delete' ~ user.id) }}">
+									<button type="submit" class="btn btn-danger">Supprimer</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

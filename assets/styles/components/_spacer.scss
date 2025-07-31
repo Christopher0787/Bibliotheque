@@ -1,0 +1,14 @@
+$spacers: (
+    "t": "top",
+    "b": "bottom",
+    "s": "left",
+    "e": "right"
+);
+
+@each $key, $name in $spacers {
+    @for $i from 1 through 5 {
+        .margin-#{$key}-#{$i} {
+            margin-#{$name}: $i * 0.5rem;
+        }
+    }
+}

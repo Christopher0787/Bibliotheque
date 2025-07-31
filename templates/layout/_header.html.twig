@@ -1,0 +1,48 @@
+<header class="navBar">
+	<nav class="navBar-content">
+		<a href="{{ path('app_home') }}" class="navBar-logo">My first app Library</a>
+		<ul class="navBar-links">
+			<li class="navBar-item">
+				<a href="{{ path('app_home') }}">Accueil</a>
+			</li>
+			<li class="navBar-item">
+				<a href="{{ path('app_livre_index') }}">Livres</a>
+			</li>
+		</ul>
+		<ul class="navBar-btn">
+			{% if app.user %}
+				{% if is_granted('ROLE_ADMIN') %}
+					<li class="navBar-item">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuAdmin" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Admin
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuAdmin">
+								<a class="dropdown-item" href="{{ path('admin_users_index') }}">Users</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{ path('admin_livres_index') }}">Livres</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{ path('admin_categories_index') }}">Catégories</a>
+								<div class="dropdown-divider"></div>
+							</div>
+						</div>
+
+					</li>
+				{% endif %}
+				<li class="navBar-item">
+					<a href="{{ path('_logout_main') }}" class="btn btn-danger" data-turbo="false">
+						<i class="bi bi-box-arrow-in-left"></i>
+						Logout
+					</a>
+				</li>
+			{% else %}
+				<li class="navBar-item">
+					<a href="{{ path('app_login') }}" class="btn btn-secondary">
+						<i class="bi bi-box-arrow-in-right"></i>
+						Login
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>
