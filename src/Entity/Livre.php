@@ -35,7 +35,7 @@ class Livre
     #[Assert\NotBlank]
     #[Assert\Length(
         min: 5,
-        mixMessage: 'Le contenue doit comporter au moin {{ limit }} caractères',
+        minMessage: 'Le contenue doit comporter au moin {{ limit }} caractères',
     )]
     private ?string $content = null;
 
