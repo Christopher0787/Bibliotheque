@@ -36,7 +36,7 @@ class UserType extends AbstractType
                         'autocomplete' => 'new-password',
                     ],
                     'constraints' => [
-                        new Assert\NotCompromisedPassword(message: 'Ce mot de passe a été compromis dans une fuite de données. Veuillez en choisir un autre.'),
+                        // new Assert\NotCompromisedPassword(message: 'Ce mot de passe a été compromis dans une fuite de données. Veuillez en choisir un autre.'),
                         new Assert\Regex(
                             pattern: '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/',
                             message: 'Le mot de passe doit contenir au moins 12 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.'

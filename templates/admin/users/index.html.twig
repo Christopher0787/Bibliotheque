@@ -19,10 +19,10 @@
 						<div class="card-body">
 							<em class="text-muted">{{ user.id }}</em>
 							<p>{{ user.email }}</p>
-							<p>
-								Créer le
-								{{ user.createdAt|date('d-m-y H:i') }}
-							</p>
+							{# <p>
+																						Créer le
+																						{{ user.createdAt|date('d-m-y H:i') }}
+																					</p> #}
 							<div class="d-flex justify-content-between align-items-center flex-wrap">
 								<a href="{{ path('admin_users_update', { id: user.id }) }}" class="btn btn-warning">Modifier</a>
 								<form action="{{ path('admin_users_delete', { id: user.id }) }}" method="POST" onsubmit="return confirm('Être-vous sur de vouloir supprimer ce user ?')">
