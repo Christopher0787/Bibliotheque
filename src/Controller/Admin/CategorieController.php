@@ -18,7 +18,7 @@ final class CategorieController extends AbstractController
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(CategorieRepository $categorieRepository): Response
     {
-        return $this->render('admin/categorie/index.html.twig', [
+        return $this->render('admin/categories/index.html.twig', [
             'categories' => $categorieRepository->findBy(
                 [],
                 ['name' => 'ASC'],
@@ -42,9 +42,9 @@ final class CategorieController extends AbstractController
 
             $this->addflash('success', 'La Categorie à été créer');
 
-            return $this->redirectToRoute('admin_categorie_index');
+            return $this->redirectToRoute('admin_categories_index');
         }
-        return $this->render('admin/categorie/create.html.twig', [
+        return $this->render('admin/categories/create.html.twig', [
             'form' => $form,
         ]);
     }
@@ -63,9 +63,9 @@ final class CategorieController extends AbstractController
 
             $this->addflash('success', 'La Categorie à été mis à jour');
 
-            return $this->redirectToRoute('admin_categorie_index');
+            return $this->redirectToRoute('admin_categories_index');
         }
-        return $this->render('admin/categorie/update.html.twig', [
+        return $this->render('admin/categories/update.html.twig', [
             'form' => $form,
         ]);
     }
@@ -83,6 +83,6 @@ final class CategorieController extends AbstractController
         } else {
             $this->addFlash('danger', 'Le token CSRF est invalide');
         }
-        return $this->redirectToRoute('admin_categorie_index');
+        return $this->redirectToRoute('admin_categories_index');
     }
 }
